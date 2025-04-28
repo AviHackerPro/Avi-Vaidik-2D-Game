@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://7flgdvh2epsh"]
+[gd_scene load_steps=6 format=3 uid="uid://7flgdvh2epsh"]
 
 [ext_resource type="Texture2D" uid="uid://ii7l8nfr6406" path="res://Blue.png" id="1_ig7tw"]
 [ext_resource type="Texture2D" uid="uid://dldktggp0jnj8" path="res://Terrain (16x16).png" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://brt31qfmt0rxl" path="res://scenes/main_character.tscn" id="3_h2yge"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h2yge"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1bvp3"]
 texture = ExtResource("2_0xm2m")
 0:0/0 = 0
 1:0/0 = 0
@@ -150,8 +151,8 @@ texture = ExtResource("2_0xm2m")
 19:10/0 = 0
 20:10/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_1bvp3"]
-sources/0 = SubResource("TileSetAtlasSource_h2yge")
+[sub_resource type="TileSet" id="TileSet_lquwl"]
+sources/0 = SubResource("TileSetAtlasSource_1bvp3")
 
 [node name="Node" type="Node"]
 
@@ -168,5 +169,8 @@ stretch_mode = 1
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
 scale = Vector2(2.5, 2.5)
-tile_set = SubResource("TileSet_1bvp3")
+tile_set = SubResource("TileSet_lquwl")
 format = 2
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("3_h2yge")]
+position = Vector2(177, 519)
