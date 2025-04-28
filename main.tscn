@@ -1,3 +1,17 @@
-[gd_scene format=3 uid="uid://7flgdvh2epsh"]
+[gd_scene load_steps=2 format=3 uid="uid://7flgdvh2epsh"]
+
+[ext_resource type="Texture2D" uid="uid://ii7l8nfr6406" path="res://Blue.png" id="1_ig7tw"]
 
 [node name="Node" type="Node"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ig7tw")
+stretch_mode = 1
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
