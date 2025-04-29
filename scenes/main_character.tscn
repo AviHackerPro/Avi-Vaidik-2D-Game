@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://brt31qfmt0rxl"]
 
-[ext_resource type="Script" uid="uid://c5a2ubqxsnvxt" path="res://scenes/main_character.gd" id="1_ig48j"]
-[ext_resource type="Texture2D" uid="uid://cog4nqhy7c35n" path="res://Jump (32x32).png" id="1_nrcqd"]
+[ext_resource type="Script" uid="uid://c5a2ubqxsnvxt" path="res://Scripts/main_character.gd" id="1_ig48j"]
+[ext_resource type="Texture2D" path="res://Assets/sprites/Jump (32x32).png" id="1_nrcqd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
 size = Vector2(56, 70)
