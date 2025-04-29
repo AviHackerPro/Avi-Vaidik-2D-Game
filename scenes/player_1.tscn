@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://043h7cixe3ti"]
+
+[ext_resource type="Texture2D" uid="uid://b2djd6rfs0ltn" path="res://Assets/sprites/knight.png" id="1_squ5q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bxx23"]
+atlas = ExtResource("1_squ5q")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qh3su"]
+atlas = ExtResource("1_squ5q")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_buxg0"]
+atlas = ExtResource("1_squ5q")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6736r"]
+atlas = ExtResource("1_squ5q")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i66ns"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bxx23")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qh3su")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_buxg0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6736r")
+}],
+"loop": true,
+"name": &"IDLE",
+"speed": 9.0
+}]
+
+[node name="Player1" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_i66ns")
+animation = &"IDLE"
+frame_progress = 0.635808
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
