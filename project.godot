@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Avi & Vaidik 2D Game"
-run/main_scene="uid://7flgdvh2epsh"
+run/main_scene="uid://bomx8gdpkvj4x"
 config/features=PackedStringArray("4.4", "Mobile")
 
 [input]
