@@ -22,7 +22,7 @@ region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q1mvt"]
 atlas = ExtResource("1_squ5q")
-region = Rect2(32, 192, 32, 32)
+region = Rect2(64, 160, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p0e4v"]
 atlas = ExtResource("1_squ5q")
@@ -105,7 +105,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"IDLE",
-"speed": 10.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -179,8 +179,9 @@ script = ExtResource("1_p0e4v")
 position = Vector2(0, 1)
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_i66ns")
-animation = &"JUMP"
-frame_progress = 0.877726
+animation = &"IDLE"
+autoplay = "IDLE"
+frame_progress = 0.0433505
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -1)
