@@ -204,3 +204,5 @@ position = Vector2(68, 626)
 position = Vector2(101, 784)
 scale = Vector2(9.64945, 1.80791)
 gravity = 70.0
+
+[node name="Node2D" type="Node2D" parent="."]
