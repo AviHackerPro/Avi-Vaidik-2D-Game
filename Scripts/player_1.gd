@@ -3,8 +3,8 @@ extends CharacterBody2D
 @onready var jump_sound: AudioStreamPlayer2D = $JumpSound
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
-const SPEED = 500.0
-const JUMP_VELOCITY = -600.0
+const SPEED = 300.0
+const JUMP_VELOCITY = -420.0
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -23,11 +23,15 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-
-	if Input.is_action_just_pressed("JUMP"):
-		animated_sprite.play("JUMP")
-	elif Input.is_action_just_pressed("Left") or Input.is_action_pressed("Right"):
-		animated_sprite.play("RUN")
+	if is_on_floor():
+		if direction:
+			animated_sprite.play("RUN")
+		else:
+			animated_sprite.play("IDLE")
 	else:
-		animated_sprite.play("IDLE")
+		animated_sprite.play("JUMP")
+	if direction < 0:
+		animated_sprite.flip_h = 1
+	elif direction > 0:
+		animated_sprite.flip_h = 0
 	move_and_slide()

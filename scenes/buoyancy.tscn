@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://cabjyca74havb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vdk52"]
+size = Vector2(203, 40)
+
+[node name="Buouyancy" type="Area2D"]
+gravity_space_override = 3
+gravity_point_center = Vector2(0, -1)
+gravity_direction = Vector2(0, -1)
+gravity = 690.434
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(91.5, 10)
+shape = SubResource("RectangleShape2D_vdk52")
