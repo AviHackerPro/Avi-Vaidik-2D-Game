@@ -170,7 +170,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f7tsm"]
-height = 37.0
+radius = 14.0
+height = 48.0
 
 [node name="Player1" type="CharacterBody2D"]
 script = ExtResource("1_p0e4v")
@@ -186,7 +187,7 @@ autoplay = "IDLE"
 position = Vector2(0, -1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 9.5)
+position = Vector2(-1, 8)
 shape = SubResource("CapsuleShape2D_f7tsm")
 
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="."]
