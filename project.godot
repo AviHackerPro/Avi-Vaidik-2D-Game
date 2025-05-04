@@ -14,6 +14,10 @@ config/name="Avi & Vaidik 2D Game"
 run/main_scene="uid://bomx8gdpkvj4x"
 config/features=PackedStringArray("4.4", "Mobile")
 
+[audio]
+
+buses/default_bus_layout=""
+
 [input]
 
 Jump={

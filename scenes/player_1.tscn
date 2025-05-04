@@ -185,6 +185,12 @@ autoplay = "IDLE"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -1)
+zoom = Vector2(1.1, 1.1)
+limit_left = -45
+limit_top = -45
+limit_bottom = 875
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 8)
