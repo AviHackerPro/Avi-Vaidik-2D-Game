@@ -18,6 +18,11 @@ config/features=PackedStringArray("4.4", "Mobile")
 
 buses/default_bus_layout=""
 
+[display]
+
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
 [input]
 
 Jump={
