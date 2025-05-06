@@ -194,7 +194,9 @@ volume_db = -12.51
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-1, -125)
-limit_left = -45
-limit_top = -45
+limit_left = 0
+limit_top = 0
+limit_right = 1976
+limit_bottom = 856
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
