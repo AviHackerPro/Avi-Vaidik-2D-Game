@@ -1,14 +1,14 @@
 [gd_scene load_steps=15 format=3 uid="uid://bomx8gdpkvj4x"]
 
-[ext_resource type="PackedScene" uid="uid://043h7cixe3ti" path="res://scenes/player_1.tscn" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://043h7cixe3ti" path="res://Scenes/player_1.tscn" id="1_uwrxv"]
 [ext_resource type="AudioStream" uid="uid://5x340u12obm2" path="res://Assets/music/time_for_adventure.mp3" id="1_v158k"]
 [ext_resource type="Texture2D" uid="uid://btuyxfo714x3r" path="res://Assets/sprites/world_tileset.png" id="1_yqjtg"]
 [ext_resource type="Texture2D" uid="uid://y1gn334airsy" path="res://Assets/backgrounds/parallax jungle/2.Trees_back.png" id="2_vtaks"]
 [ext_resource type="Texture2D" uid="uid://d2psx3oxtd25w" path="res://Assets/sprites/platforms.png" id="3_iywne"]
 [ext_resource type="Texture2D" uid="uid://dkgv7eh3id8rb" path="res://Assets/backgrounds/parallax jungle/3.Trees_front.png" id="3_kvpfn"]
 [ext_resource type="Texture2D" uid="uid://ecijmt82sby5" path="res://Assets/backgrounds/parallax jungle/4.Ground.png" id="4_kvpfn"]
-[ext_resource type="PackedScene" uid="uid://cabjyca74havb" path="res://scenes/buoyancy.tscn" id="4_lbhrr"]
-[ext_resource type="PackedScene" uid="uid://cdhx374wo4w7y" path="res://scenes/coin.tscn" id="6_p57ef"]
+[ext_resource type="PackedScene" uid="uid://cabjyca74havb" path="res://Scenes/buoyancy.tscn" id="4_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://cdhx374wo4w7y" path="res://Scenes/coin.tscn" id="6_p57ef"]
 [ext_resource type="Script" uid="uid://bexqra6vhwcfj" path="res://Scripts/game_manager.gd" id="7_u5sy4"]
 [ext_resource type="Texture2D" uid="uid://paqclakqlbly" path="res://Assets/backgrounds/parallax jungle/1.Backround.png" id="8_gee14"]
 
