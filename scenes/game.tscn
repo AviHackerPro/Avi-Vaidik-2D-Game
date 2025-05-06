@@ -216,7 +216,7 @@ script = ExtResource("7_u5sy4")
 follow_viewport_scale = 253.381
 
 [node name="Parallax Background" type="ParallaxLayer" parent="Map/P_Background"]
-position = Vector2(21, 22)
+position = Vector2(5, 6)
 motion_scale = Vector2(0.1, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Map/P_Background/Parallax Background"]
@@ -226,7 +226,7 @@ texture = ExtResource("8_gee14")
 centered = false
 
 [node name="Parallax Trees_back" type="ParallaxLayer" parent="Map/P_Background"]
-position = Vector2(21, 22)
+position = Vector2(5, 6)
 motion_scale = Vector2(0.3, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Map/P_Background/Parallax Trees_back"]
@@ -236,7 +236,7 @@ texture = ExtResource("2_vtaks")
 centered = false
 
 [node name="Parallax Trees_front" type="ParallaxLayer" parent="Map/P_Background"]
-position = Vector2(21, 22)
+position = Vector2(5, 6)
 motion_scale = Vector2(0.6, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Map/P_Background/Parallax Trees_front"]
@@ -246,7 +246,7 @@ texture = ExtResource("3_kvpfn")
 centered = false
 
 [node name="Parallax Ground" type="ParallaxLayer" parent="Map/P_Background"]
-position = Vector2(21, 22)
+position = Vector2(5, 6)
 
 [node name="Sprite2D" type="Sprite2D" parent="Map/P_Background/Parallax Ground"]
 position = Vector2(6.00006, -3)
@@ -255,12 +255,12 @@ texture = ExtResource("4_kvpfn")
 centered = false
 
 [node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="Map"]
-position = Vector2(21, 22)
+position = Vector2(5, 6)
 stream = ExtResource("1_v158k")
 autoplay = true
 
 [node name="TileMap" type="TileMap" parent="Map"]
-position = Vector2(22, 22)
+position = Vector2(6, 6)
 rotation = -0.00166909
 scale = Vector2(2.5, 2.5)
 tile_set = SubResource("TileSet_lbhrr")
@@ -270,42 +270,42 @@ layer_0/tile_data = PackedInt32Array(-65536, 1, 805306368, -65535, 1, 805306368,
 [node name="Coins" type="Node" parent="."]
 
 [node name="Coin1" parent="Coins" instance=ExtResource("6_p57ef")]
-position = Vector2(484, 603)
+position = Vector2(468, 587)
 
 [node name="Coin2" parent="Coins" instance=ExtResource("6_p57ef")]
-position = Vector2(804, 602)
+position = Vector2(788, 586)
 
 [node name="Coin3" parent="Coins" instance=ExtResource("6_p57ef")]
-position = Vector2(1043, 482)
+position = Vector2(1027, 466)
 
 [node name="Coin4" parent="Coins" instance=ExtResource("6_p57ef")]
-position = Vector2(842, 413)
+position = Vector2(826, 397)
 
 [node name="Coin5" parent="Coins" instance=ExtResource("6_p57ef")]
-position = Vector2(323, 481)
+position = Vector2(307, 465)
 
 [node name="Coin6" parent="Coins" instance=ExtResource("6_p57ef")]
-position = Vector2(122, 479)
+position = Vector2(106, 463)
 
 [node name="Coin7" parent="Coins" instance=ExtResource("6_p57ef")]
-position = Vector2(203, 319)
+position = Vector2(187, 303)
 
 [node name="Coin8" parent="Coins" instance=ExtResource("6_p57ef")]
-position = Vector2(403, 200)
+position = Vector2(387, 184)
 
 [node name="Coin9" parent="Coins" instance=ExtResource("6_p57ef")]
-position = Vector2(182, 42)
+position = Vector2(166, 26)
 
 [node name="Coin10" parent="Coins" instance=ExtResource("6_p57ef")]
-position = Vector2(164, 167)
+position = Vector2(148, 151)
 
 [node name="Labels" type="CanvasLayer" parent="."]
 
 [node name="Panel" type="Panel" parent="Labels"]
-offset_left = 33.0
-offset_top = 35.0
-offset_right = 233.0
-offset_bottom = 88.0
+offset_left = 17.0
+offset_top = 19.0
+offset_right = 217.0
+offset_bottom = 72.0
 
 [node name="PointsLabel" type="Label" parent="Labels/Panel"]
 unique_name_in_owner = true
@@ -321,9 +321,9 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Player1" parent="." instance=ExtResource("1_uwrxv")]
-position = Vector2(96, 653)
+position = Vector2(80, 637)
 
 [node name="Buoyancy" parent="." instance=ExtResource("4_lbhrr")]
-position = Vector2(122, 806)
+position = Vector2(106, 790)
 scale = Vector2(9.64945, 1.80791)
 gravity = 70.0
