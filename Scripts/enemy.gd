@@ -17,4 +17,3 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 				body.jump_side(500)
 			else:
 				body.jump_side(-500)
-			
