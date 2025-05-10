@@ -1,9 +1,10 @@
-[gd_scene load_steps=22 format=3 uid="uid://bomx8gdpkvj4x"]
+[gd_scene load_steps=24 format=3 uid="uid://bomx8gdpkvj4x"]
 
 [ext_resource type="PackedScene" uid="uid://043h7cixe3ti" path="res://scenes/player_1.tscn" id="1_uwrxv"]
 [ext_resource type="AudioStream" uid="uid://5x340u12obm2" path="res://Assets/music/time_for_adventure.mp3" id="1_v158k"]
 [ext_resource type="Texture2D" uid="uid://btuyxfo714x3r" path="res://Assets/sprites/world_tileset.png" id="1_yqjtg"]
 [ext_resource type="Texture2D" uid="uid://y1gn334airsy" path="res://Assets/backgrounds/parallax jungle/2.Trees_back.png" id="2_vtaks"]
+[ext_resource type="Script" uid="uid://ck2px8uyfri1h" path="res://scripts/pause.gd" id="3_ir15t"]
 [ext_resource type="Texture2D" uid="uid://d2psx3oxtd25w" path="res://Assets/sprites/platforms.png" id="3_iywne"]
 [ext_resource type="Texture2D" uid="uid://dkgv7eh3id8rb" path="res://Assets/backgrounds/parallax jungle/3.Trees_front.png" id="3_kvpfn"]
 [ext_resource type="Texture2D" uid="uid://ecijmt82sby5" path="res://Assets/backgrounds/parallax jungle/4.Ground.png" id="4_kvpfn"]
@@ -12,8 +13,21 @@
 [ext_resource type="Texture2D" uid="uid://paqclakqlbly" path="res://Assets/backgrounds/parallax jungle/1.Backround.png" id="8_gee14"]
 [ext_resource type="PackedScene" uid="uid://dn3a5om86h8y2" path="res://scenes/enemy.tscn" id="10_trtic"]
 [ext_resource type="Texture2D" uid="uid://bv4wqsexdjj2n" path="res://Assets/sprites/heart.png" id="11_kvuet"]
-[ext_resource type="Script" uid="uid://ubp46hvbo4u5" path="res://scripts/fall_area.gd" id="11_trtic"]
+[ext_resource type="Script" uid="uid://ubp46hvbo4u5" path="res://Scripts/fall_area.gd" id="11_trtic"]
 [ext_resource type="PackedScene" uid="uid://orv0dnxhxxpj" path="res://scenes/PlatformBL.tscn" id="12_rku1e"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_trtic"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 1, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+corner_detail = 10
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("1_yqjtg")
@@ -282,19 +296,20 @@ _data = {
 
 [node name="Game" type="Node"]
 
-[node name="GameManager" type="Node" parent="."]
+[node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("hearts")]
 unique_name_in_owner = true
 script = ExtResource("7_u5sy4")
+hearts = [NodePath("../Labels/Hearts/HBoxContainer/Heart"), NodePath("../Labels/Hearts/HBoxContainer/Heart2"), NodePath("../Labels/Hearts/HBoxContainer/Heart3")]
 
 [node name="Labels" type="CanvasLayer" parent="."]
 
-[node name="Panel" type="Panel" parent="Labels"]
+[node name="PointsPanel" type="Panel" parent="Labels"]
 offset_left = 17.0
 offset_top = 19.0
 offset_right = 217.0
 offset_bottom = 72.0
 
-[node name="PointsLabel" type="Label" parent="Labels/Panel"]
+[node name="PointsLabel" type="Label" parent="Labels/PointsPanel"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -346,6 +361,67 @@ expand_mode = 2
 layout_mode = 2
 texture = ExtResource("11_kvuet")
 expand_mode = 2
+
+[node name="Pause" type="Node" parent="Labels"]
+script = ExtResource("3_ir15t")
+
+[node name="PausePanel" type="Panel" parent="Labels/Pause"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Labels/Pause/PausePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -219.0
+offset_top = -153.0
+offset_right = 230.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "GAME PAUSED
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Labels/Pause/PausePanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.571
+anchor_right = 0.5
+anchor_bottom = 0.571
+offset_left = -232.0
+offset_top = -110.008
+offset_right = 245.0
+offset_bottom = 126.992
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Resume" type="Button" parent="Labels/Pause/PausePanel/VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_trtic")
+text = "Resume
+"
+
+[node name="Menu" type="Button" parent="Labels/Pause/PausePanel/VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_trtic")
+text = "Go to main menu"
 
 [node name="Map" type="Node" parent="."]
 
@@ -421,13 +497,19 @@ autoplay = "Platforms"
 [node name="Enemies" type="Node" parent="Map"]
 
 [node name="Enemy" parent="Map/Enemies" instance=ExtResource("10_trtic")]
-position = Vector2(470, 658)
+position = Vector2(471, 663)
 
 [node name="Enemy2" parent="Map/Enemies" instance=ExtResource("10_trtic")]
 position = Vector2(1309, 370)
 
 [node name="Enemy3" parent="Map/Enemies" instance=ExtResource("10_trtic")]
 position = Vector2(811, 379)
+
+[node name="Enemy4" parent="Map/Enemies" instance=ExtResource("10_trtic")]
+position = Vector2(1786, 615)
+
+[node name="Enemy5" parent="Map/Enemies" instance=ExtResource("10_trtic")]
+position = Vector2(1611, 319)
 
 [node name="Area2D" type="Area2D" parent="Map"]
 position = Vector2(572, 786)
@@ -477,11 +559,8 @@ position = Vector2(1027, 76)
 [node name="Coin13" parent="Coins" instance=ExtResource("6_p57ef")]
 position = Vector2(1425, 263)
 
-[node name="Coin19" parent="Coins" instance=ExtResource("6_p57ef")]
-position = Vector2(1426, 104)
-
 [node name="Coin14" parent="Coins" instance=ExtResource("6_p57ef")]
-position = Vector2(1633, 394)
+position = Vector2(1626, 333)
 
 [node name="Coin15" parent="Coins" instance=ExtResource("6_p57ef")]
 position = Vector2(1425, 425)
@@ -489,7 +568,12 @@ position = Vector2(1425, 425)
 [node name="Coin16" parent="Coins" instance=ExtResource("6_p57ef")]
 position = Vector2(1586, 703)
 
+[node name="Coin17" parent="Coins" instance=ExtResource("6_p57ef")]
+position = Vector2(1426, 103)
+
 [node name="Player1" parent="." instance=ExtResource("1_uwrxv")]
 position = Vector2(80, 637)
 
+[connection signal="pressed" from="Labels/Pause/PausePanel/VBoxContainer/Resume" to="Labels/Pause" method="_on_resume_pressed"]
+[connection signal="pressed" from="Labels/Pause/PausePanel/VBoxContainer/Menu" to="Labels/Pause" method="_on_menu_pressed"]
 [connection signal="body_entered" from="Map/Area2D" to="Map/Area2D" method="_on_body_entered"]

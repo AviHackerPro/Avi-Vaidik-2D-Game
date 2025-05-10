@@ -1,7 +1,7 @@
 [gd_scene load_steps=20 format=3 uid="uid://dn3a5om86h8y2"]
 
 [ext_resource type="Texture2D" uid="uid://x34vpevmn8py" path="res://Assets/enemies/Mushroom/Idle (32x32).png" id="1_7p1mj"]
-[ext_resource type="Script" uid="uid://ckjpvoawpns1l" path="res://scripts/enemy.gd" id="1_md0e3"]
+[ext_resource type="Script" uid="uid://ckjpvoawpns1l" path="res://Scripts/enemy.gd" id="1_md0e3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ir15t"]
 atlas = ExtResource("1_7p1mj")
@@ -113,7 +113,7 @@ animations = [{
 size = Vector2(48, 41)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_md0e3"]
-size = Vector2(48, 41)
+size = Vector2(54, 44)
 
 [node name="Enemy" type="RigidBody2D"]
 script = ExtResource("1_md0e3")
@@ -132,7 +132,7 @@ shape = SubResource("RectangleShape2D_trtic")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(14, 29.5)
+position = Vector2(14, 28)
 shape = SubResource("RectangleShape2D_md0e3")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

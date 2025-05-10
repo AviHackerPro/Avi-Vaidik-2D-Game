@@ -6,6 +6,13 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -420.0
 
+func jump():
+	velocity.y = JUMP_VELOCITY
+	
+func jump_side(x):
+	velocity.y = JUMP_VELOCITY
+	velocity.x = x
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
